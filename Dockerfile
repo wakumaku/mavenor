@@ -12,8 +12,8 @@ RUN apt-get update \
     && echo "yes" |  apt-get install -y oracle-java8-set-default \
     && apt-get install -y maven
 
-ARG PUID=1000
-ARG PGID=1000
+ARG PUID=106
+ARG PGID=111
 RUN groupadd -g $PGID mavenor \
     && useradd -u $PUID -g mavenor -m mavenor -d /home/mavenor
 
