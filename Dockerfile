@@ -17,5 +17,7 @@ ARG PGID=111
 RUN groupadd -g $PGID mavenor \
     && useradd -u $PUID -g mavenor -m mavenor -d /home/mavenor
 
+RUN apt-get autoremove -y && apt-get clean && apt-get autoclean
+
 USER mavenor
 WORKDIR /home/mavenor
