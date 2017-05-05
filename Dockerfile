@@ -12,6 +12,11 @@ RUN apt-get update \
     && echo "yes" |  apt-get install -y oracle-java8-set-default \
     && apt-get install -y maven
 
+RUN locale-gen en_US.UTF-8  
+ENV LANG en_US.UTF-8  
+ENV LANGUAGE en_US:en  
+ENV LC_ALL en_US.UTF-8
+
 ARG PUID=106
 ARG PGID=111
 RUN groupadd -g $PGID mavenor \
